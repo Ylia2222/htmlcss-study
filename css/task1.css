@@ -1,0 +1,33 @@
+ body {
+     background-color: antiquewhite
+ }
+
+ main {
+     background-color: azure;
+     margin: auto;
+     padding: 22px;
+
+
+
+ }
+
+ #img1 {
+     width: 100%;
+     border-style: solid;
+     border-color: rgba(22, 12, 2, 1);
+
+ }
+
+ #img2 {
+     display: block;
+     width: 50%;
+     border-style: solid;
+     border-color: rgba(22, 12, 2, 1);
+ }
+
+
+
+ h1 {
+     text-align: center;
+     font-family: serif;
+ }

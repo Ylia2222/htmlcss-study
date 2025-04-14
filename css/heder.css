@@ -1,0 +1,15 @@
+    header {
+        background-color: #b4a6ff;
+        /*цвет фона*/
+        color: #000000;
+        /*цвет текста*/
+        padding: 22px;
+    
+    }
+
+    h1 {
+        margin: 0;
+    }
+#menu{
+        display: flex;
+}
