@@ -1,33 +1,45 @@
- body {
-     background-color: antiquewhite
- }
+body {
+    background-color: #ffc5c5;
+    margin: 0px;
+}
 
- main {
-     background-color: azure;
-     margin: auto;
-     padding: 22px;
+header {
+    background-color: bisque;
+    padding: 25px;
 
+}
 
+main {
+    padding: 9px;
+    text-align: center;
+    margin: 0px 50px;
+    background-color: aquamarine;
+    display: block;
+}
 
- }
-
- #img1 {
-     width: 100%;
-     border-style: solid;
-     border-color: rgba(22, 12, 2, 1);
-
- }
-
- #img2 {
-     display: block;
-     width: 50%;
-     border-style: solid;
-     border-color: rgba(22, 12, 2, 1);
- }
+img {
+    height: 300px;
+    display: block;
+    margin: auto;
 
 
+}
 
- h1 {
-     text-align: center;
-     font-family: serif;
- }
+footer {
+    text-align: center;
+    padding: 25px;
+}
+
+
+
+
+footer {
+    background-color: #f7b4d8;
+}
+
+p {
+    display: block;
+    max-width: 422px;
+    text-align: center;
+    margin: auto;
+}

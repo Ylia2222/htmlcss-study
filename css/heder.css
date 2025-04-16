@@ -1,8 +1,8 @@
-    header {
+   /* header {
         background-color: #b4a6ff;
-        /*цвет фона*/
+       
         color: #000000;
-        /*цвет текста*/
+        
         padding: 22px;
     
     }
@@ -13,3 +13,52 @@
 #menu{
         display: flex;
 }
+*/
+   header {
+       background-color: #810000;
+       border-bottom-style: solid;
+       border-bottom-color: black;
+       border-bottom-width: 3px;
+       padding: 8px;
+   }
+
+   img {
+       width: 5vw;
+       /*viewport width - ширина окна браузера*/
+       vertical-align: middle;
+       margin: 6px;
+       min-width: 33px;
+       max-width: 66px;
+   }
+
+   h1 {
+       display: inline;
+       vertical-align: middle;
+       font-size: clamp(24px, 2.2vw, 32px);
+   }
+
+   a {
+       background-color: antiquewhite;
+       color: firebrick;
+       padding: clamp(3px, 1.5vw, 12px);
+
+       display: inline-block;
+       margin: 10px clamp(10px, 2vw, 66px);
+       border-radius: 22px;
+       text-decoration: none;
+       font-size: clamp(22px, 2.2vw, 22px);
+   }
+
+   a:hover {
+       background-color: #000098;
+       text-decoration: underline;
+   }
+
+   nav {
+       display: inline-block;
+
+   }
+
+   body {
+       margin: 0 0 0 0;
+   }
