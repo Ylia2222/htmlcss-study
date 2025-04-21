@@ -22,7 +22,7 @@
        padding: 8px;
    }
 
-   img {
+   #header-icon {
        width: 5vw;
        /*viewport width - ширина окна браузера*/
        vertical-align: middle;
