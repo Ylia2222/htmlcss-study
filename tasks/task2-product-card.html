@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>flowers</title>
+</head>
+<style>
+    .product-card {
+        background-color: aliceblue;
+        width: 50vw;
+        max-width: 444px;
+        height: auto;
+        border-style: solid;
+        border-color: darkgray;
+        border-width: 2px;
+        border-radius: 2px;
+        box-shadow: 5px 5px 10px gray;
+        display: inline-block;
+        margin: 6px;
+        transition-duration: 0.22s;
+        transition-property: transform;
+    }
+
+    .product-card:hover {
+        transform: scale(1.05);
+    }
+
+    .product-card:active {
+        transform: scale(0.88);
+    }
+
+    .product-info-row {
+        background-color: #f49c9c;
+        text-align: center;
+        font-size: 25px;
+
+    }
+
+    .product-desc {
+        background-color: #afafff;
+        color: aliceblue;
+    }
+
+    .product-img {
+        width: 100%;
+        display: block;
+        height: 400px;
+        object-fit: cover;
+
+    }
+
+    .product-info {
+        padding: 0px 3px;
+
+    }
+
+    .product-name {
+        display: inline-block;
+        width: 49%;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    .product-price {
+        display: inline-block;
+        width: 49%;
+        text-align: right;
+    }
+
+    .product-desc {
+        margin: 0;
+        text-align: left;
+    }
+
+    body {
+        background-color: antiquewhite;
+        text-align: center;
+
+    }
+
+    @media(max-width:555px) {
+        .product-card {
+            display: block;
+            width: 100%;
+            margin: 20px auto;
+        }
+
+        .product-name {
+            display: block;
+            text-align: center;
+            font-size: 24px;
+            width: 100%;
+        }
+
+        .product-price {
+            display: block;
+            text-align: center;
+            font-size: 24px;
+            width: 100%;
+        }
+
+        .product-info {
+            width: 100%;
+        }
+    }
+</style>
+
+<body>
+    <div class="product-card">
+
+        <img src="https://img.webcdn.ru/catalog/Photo/%D0%A3%D0%A2-00065742.jpg" alt="" class="product-img" draggable="false">
+
+        <div class="product-info">
+
+            <div class="product-info-row">
+                <div class="product-name">РОЗА</div>
+                <div class="product-price">100p.</div>
+            </div>
+
+
+            <p class="product-desc">
+                Cобирательное название видов и сортов представителей рода Шипо́вник (лат. Rósa), выращиваемых человеком и растущих в дикой природе. <br>Бо́льшая часть сортов роз получена в результате длительной селекции путём многократных повторных скрещиваний и отбора. Некоторые сорта являются формами дикорастущих видов.
+            </p>
+        </div>
+    </div>
+    <div class="product-card">
+
+        <img src="https://imperyiacvetov.ru/wa-data/public/shop/products/66/13/1366/images/1724/1724.970.jpg" alt="" class="product-img" draggable="false">
+
+        <div class="product-info">
+
+            <div class="product-info-row">
+                <div class="product-name">ПИОНЫ</div>
+                <div class="product-price">199p.</div>
+            </div>
+
+
+            <p class="product-desc">
+                Pод травянистых многолетников и листопадных кустарников. Единственный род семейства Пионовые, ранее род относили к семейству Лютиковых. <br>Пионы цветут в конце весны, ценятся садоводами за пышную листву, эффектные цветы и декоративные плоды. <br>Они предпочитают хорошо освещённые и прогреваемые солнцем участки, хотя могут перенести и небольшое затенениe.
+            </p>
+        </div>
+    </div>
+</body></html>
