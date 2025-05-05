@@ -4,13 +4,56 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
-        button {
-            display: block;
-            margin: 20px;
+        body {
+            background-color: rgba(255, 222, 220, 0.74);
+            color: #4e00ff;
+            padding: 22px;
+            font-family: Arial, sans-serif;
         }
 
-        body {
-            background-color: rgb(255, 194, 194);
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border-style: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px #868686;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        #volume,
+        #otvet {
+            font-weight: bold;
+            font-size: 20px;
+            color: #2c3e50;
+        }
+
+        input[type="text"] {
+            display: block;
+            margin: 5px auto 15px;
+            padding: 8px;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -148,8 +191,8 @@
         var otvet = document.querySelector("#otvet")
 
         function InpAdd() {
-            
-            otvet.textContent = input1.value + input2.value;
+
+            otvet.textContent = Number(input1.value) + Number(input2.value);
         }
     </script>
 </body></html>
