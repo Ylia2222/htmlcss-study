@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #fdb0fd;
+            font-family: inherit;
+            text-align: center;
+        }
+
+        textarea {
+            width: 77%;
+            max-width: 500px;
+            padding: 10px;
+            font-size: 15px;
+            border-radius: 5px;
+            border: 1px solid #4e4e4e;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px #faff89;
+        }
+
+        button {
+            background-color: #00baff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: blueviolet;
+            transform: scale(1.11)
+        }
+
+        .comment {
+            background-color: #ffffff;
+            padding: 15px;
+            margin-top: 10px;
+            text-align: left;
+            border-radius: 5px;
+            border-style: solid;
+            border-color: #b1b1b1;
+            border-left-width: 9px;
+            box-shadow: 0 2px 4px #faff89;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Анонимная страница коментариев</h2>
+
+    <textarea id="commentBox"></textarea>
+
+    <br>
+    <button onclick="AddComment()">Отправить</button>
+
+    <h3>Все комментарии:</h3>
+    <div id="commentList"> </div>
+
+    <script>
+        var commentNumber = localStorage.getItem("anonCommentNumber")
+
+        function AddComment() {
+            var textArea = document.querySelector("#commentBox")
+            var text = textArea.value
+
+            if (text === "") {
+                alert("Комментарий не может быть пустым!")
+                return
+            }
+
+            var fullComment = "#" + commentNumber + ": " + text
+            
+
+            localStorage.setItem("anonComment" + commentNumber, fullComment)
+            commentNumber++
+            
+            localStorage.setItem("anonCommentNumber", commentNumber)
+
+            document.querySelector("#commentList").innerHTML +=
+                `<div class='comment'>
+                     ${fullComment}
+                </div>`
+            textArea.value = ""
+        }
+
+        function LoadComment() {
+            var list = document.querySelector("#commentList")
+
+            var i = 0
+            
+            while (i < commentNumber) {
+                var item = localStorage.getItem("anonComment" + i)
+
+                list.innerHTML +=
+                    `<div class='comment'>
+                     ${item}
+                </div>`
+
+                i++
+            }
+        }
+        
+        LoadComment()
+    </script>
+</body></html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
