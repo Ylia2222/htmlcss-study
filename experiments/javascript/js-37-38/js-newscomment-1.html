@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            max-width: 555px;
+            margin: auto;
+            font-family: sans-serif;
+            background-color: darkgreen;
+            color: black;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            margin-bottom: 11px;
+            font-size: 15px;
+            padding: 11px;
+            border-width: 2px;
+            border-style: solid;
+            border-color: #6f6f6f;
+            border-radius: 6px;
+        }
+
+        button {
+            cursor: pointer;
+            color: #ffffff;
+            background-color: #009296;
+            font-size: 16px;
+            padding: 12px 22px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #a94cff;
+            transform: scale(1.11)
+        }
+
+        .comment {
+            background-color: antiquewhite;
+            box-shadow: 0 2px 4px #009296;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .user {
+            font-weight: bold;
+            margin-bottom: 6px;
+            color: brown;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Javascript</h2>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, sequi, ad? Iure sint hic, reiciendis eveniet magnam adipisci fugit nihil doloremque est.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae illo in ducimus iste! Aliquid incidunt similique laudantium delectus alias rem non, eaque consequatur. Nam sapiente architecto, non repellendus quis ullam? Fuga rerum dolorum tenetur quas saepe cumque quidem, minus.</p>
+
+    <h3>Добавить комментарий:</h3>
+    <input type="text" id="userInput"> <br>
+    <textarea id="textInput"></textarea>
+    <button onclick="AddComment()">Отправить</button>
+
+    <h3>Комментарии:</h3>
+    <div id="comments"></div>
+
+    <script>
+        var commentID = localStorage.getItem("nc_CommentID")
+
+        function AddComment() {
+            var user = document.querySelector("#userInput").value
+            var text = document.querySelector("#textInput").value
+            console.log(user, text)
+
+            if (user === "") {
+                alert("Нужно написать имя  автора!")
+            }
+
+            if (text === "") {
+                alert("Нужно написать текст комментария!")
+            }
+
+            localStorage.setItem("nc_Comment" + commentID, text)
+            localStorage.setItem("nc_User" + commentID, user)
+            commentID++
+
+            localStorage.setItem("nc_CommentID", commentID)
+
+            document.querySelector("#comments").innerHTML +=
+                `<div class="comment">
+                    <div class="user">
+                        ${user}
+                        </div>
+                    <div class="text">
+                        ${text}
+                        </div>
+                </div>`
+            user.value = ""
+        }
+
+        function LoadComment() {
+
+            var i = 1
+
+            while (i < commentID) {
+                var text = localStorage.getItem("nc_Comment" + i)
+                var user = localStorage.getItem("nc_User" + i)
+
+
+                document.querySelector("#comments").innerHTML +=
+                    `<div class="comment">
+                    <img src='https://babyimages.ru/kartinki/lisa-kartinka-03.jpg' width=22px>
+                    <div class="user">${user}</div>
+                    <div class="text">${text}</div>
+                </div>`
+                i++
+            }
+        }
+        LoadComment()
+    </script>
+
+</body></html>
