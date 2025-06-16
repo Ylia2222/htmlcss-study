@@ -1,0 +1,140 @@
+<!--
+Функционал:
+-Писать Текст
+-Сохранять Текст
+-Главный экран со всеми заметками
+-Щтдельный экран для активной заметки
+
+Элементы:
+-Заметка(маленькая): как ячейка на главном экране
+-Главный экран: на нём хранятся все заметки в сеточном виде
+-Полноэкранная заметка: когда сщздаём новую или редактируем
+
+HTML:
+-textarea
+-button
+-p,h1
+-div
+
+CSS:
+-Для заметки (маленькая): border, color, gradient
+-для главного экрана: color, flexbox
+
+JS:
+-function, var
+-атрибут onclick
+-while 
+-if
+-.value
+-document.querySelector()
+-display: none
+-LocalStorege
+-style
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Приложение для Заметок</title>
+    <style>
+        body {
+            background: linear-gradient(90deg, rgb(255, 186, 211), rgb(255, 124, 124));
+            color: #ff0000;
+            font-family: monospace;
+            text-align: center;
+        }
+
+        #saveButton {
+            background-color: antiquewhite;
+            color: brown;
+            padding: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            display: block;
+        }
+
+        #saveButton:hover {
+            background-color: #e3c4ff;
+            transform: scale(1.035);
+        }
+
+        #saveButton:active {
+            background-color: #c4cdff;
+            transform: scale(0.975);
+        }
+
+        #textInput {
+            width: 77vw;
+            height: 77vh;
+        }
+
+        #noteFullscreen {
+            display: none;
+        }
+
+        .noteItem {
+            background-color: cornsilk;
+            color: black;
+            width: 250px;
+            height: 250px;
+            padding: 10px;
+            border-radius: 15px;
+            border-style: solid;
+            border-color: #d5ffaa;
+            border-width: 1px;
+            box-shadow: 0 2px 4px #ff3d3d;
+        }
+
+        #newNoteButton {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            border-radius: 100%;
+            padding: 15px;
+            font-size: 25px;
+        }
+
+        #noteGallery {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Приложение для Заметок</h1>
+    <div id="noteFullscreen">
+        <textarea id="textInput" placeholder="Введите текст заметки..."></textarea>
+        <button id="saveButton" onclick="SaveNote()">Сохранить</button>
+    </div>
+
+    <div id="noteGallery">
+        <div class="noteItem">Lorem ipsum dolor sit amet.</div>
+        <div class="noteItem">Lorem ipsum dolor sit amet.</div>
+        <div class="noteItem">Lorem ipsum dolor sit amet.</div>
+        <div class="noteItem">Lorem ipsum dolor sit amet.</div>
+        <div class="noteItem">Lorem ipsum dolor sit amet.</div>
+        <div class="noteItem">Lorem ipsum dolor sit amet.</div>
+        <div class="noteItem">Lorem ipsum dolor sit amet.</div>
+    </div>
+    <button id="newNoteButton" onclick="OpenNoteFullscreen()">+</button>
+
+    <script>
+        function OpenNoteFullscreen() {
+            noteGallery.style.display = "none"
+            noteFullscreen.style.display = "block"
+        }
+
+        function SaveNote() {
+            noteGallery.style.display = "flex"
+            noteFullscreen.style.display = "none"
+
+        }
+    </script>
+</body></html>
