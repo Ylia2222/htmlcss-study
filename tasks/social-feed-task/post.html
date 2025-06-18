@@ -1,0 +1,177 @@
+<!--
+Функционал:
+- Генерирования постов:
+    - Имя и фото аккаунтаж
+    - Фото поста
+    - Текст поста
+    - Лайки, избранное, комменты.
+    - Время загрузки.
+Элементы:
+- Пост:
+    - Имя и фото аккаунтаж.
+    - Фото поста.
+    - Текст поста.
+    - Лайки, избранное, комменты.
+    - Время загрузки.   
+- Модули:
+    - Генерации текста из набора слов Lorem ipsum.
+    - Случайный выбор картинок из готового набора.
+    - Генерация чисел через Match.Random().
+    - Генерация времени через Date.now().   
+План выполнения:
+1. Дизайн поста
+2. Скрипт генерации поста
+    2.1 Генерация картинок: 
+                           - Скачать (5-10шт.)
+                           - Модуль выбора картинок                    
+    2.2 Генерация текста: 
+                          - Заготовить набор слов
+                          - Модуль создания текста
+    2.3 Генерация чисел
+    2.4 Генерация Времени                      
+3. Дизайн ленты
+4. Скрипт ленты     
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>post</title>
+    <style>
+        :root {
+            --primary: #bfbfbf;
+            --secondary: #e6e6e6;
+            --tertiary: #fad7d7;
+        }
+
+        body {
+            background: linear-gradient(90deg, rgb(255, 186, 211), rgb(255, 124, 124));
+        }
+
+        .post {
+            background-color: var(--primary);
+            width: 222px;
+            height: 300px;
+            padding: 5px;
+            border-style: solid;
+            border-color: darkgray;
+            border-width: 2px;
+            border-radius: 2px;
+            box-shadow: 5px 5px 10px gray;
+            display: inline-block;
+            margin: 6px;
+            transition-duration: 0.22s;
+            transition-property: transform;
+        }
+
+        .post:hover {
+            transform: scale(1.05);
+        }
+
+        .post:active {
+            transform: scale(0.88);
+        }
+
+        .post-account {
+            background-color: antiquewhite;
+            display: flex;
+            width: 100%;
+            height: 30px;
+            padding-bottom: 10px;
+        }
+
+        .post-account-img {
+            background-color: var(--secondary);
+            width: 20%;
+            height: 100%;
+            margin: 5px;
+            border-radius: 22px;
+            overflow: hidden;
+            object-fit: cover;
+        }
+
+        .post-account-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .post-account-name {
+            width: 80%;
+            height: 100%;
+        }
+
+        .post-photo {
+            background-color: #ffffff;
+            width: 100%;
+            height: 200px;
+        }
+
+        .post-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .post-info {
+            background-color: var(--tertiary);
+            width: 100%;
+            height: 15%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="post">
+        <div class="post-account">
+            <div class="post-account-img">
+                <img src="imgs/1.jpg" alt="">
+            </div>
+            <div class="post-account-name"></div>
+        </div>
+        <div class="post-photo">
+            <img src="imgs/2.jpg" alt="">
+        </div>
+        <div class="post-info"></div>
+    </div>
+
+    <script>
+        var postPhoto = document.querySelector(".post-photo img")
+        console.log(postPhoto)
+
+        var imgIndex = Math.ceil(Math.random() * 5)
+
+        postPhoto.src = `imgs/${imgIndex}.jpg`
+
+        var postAccountImg = document.querySelector(".post-account-img img")
+        console.log(postAccountImg)
+
+        var imgIndex = Math.ceil(Math.random() * 5)
+
+        postAccountImg.src = `imgs/${imgIndex}.jpg`
+
+        //генерация текста
+
+        var wordString = "Lorem ipsum dolor sit amet consectetur adipisicing elit Unde mollitia molestias hic eum amet expedita excepturi omnis labore perferendis quam fugit officiis"
+
+        var i = 0
+        var curret = 0
+        var target = Math.round(Math.random() * 20)
+        var word = ""
+        while (i < wordString.length) {
+            word += wordString[i]
+            if (wordString[i] === " ") {
+                curret += 1
+            }
+            if (curret >= target) {
+                break
+            } else if (wordString[i] === " ") {
+                word = ""
+            }
+            i++
+        }
+        console.log(word, curret, target)
+    </script>
+</body></html>
