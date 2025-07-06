@@ -1,0 +1,45 @@
+body {
+    background-color: #ffc5c5;
+    margin: 0px;
+}
+
+header {
+    background-color: bisque;
+    padding: 25px;
+
+}
+
+main {
+    padding: 9px;
+    text-align: center;
+    margin: 0px 50px;
+    background-color: aquamarine;
+    display: block;
+}
+
+img {
+    height: 300px;
+    display: block;
+    margin: auto;
+
+
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+}
+
+
+
+
+footer {
+    background-color: #f7b4d8;
+}
+
+p {
+    display: block;
+    max-width: 422px;
+    text-align: center;
+    margin: auto;
+}

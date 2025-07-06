@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #5f38ff;
+            color: aliceblue;
+        }
+
+        img {
+            width: 222px;
+            border-radius: 222px;
+        }
+
+        img:hover {
+            transform: scale(1.02)
+        }
+
+        img:active {
+            transform: scale(1.02)
+        }
+
+        .hero {
+            display: block;
+            height: 200px;
+            opacity: 0;
+            transform: translateY(-100%);
+            animation: heroAnim 2s forwards;
+        }
+
+        @keyframes heroAnim {
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+    </style>
+</head>
+
+<body>
+    <h1>Кликер!</h1>
+    <h2>Кликай по картинке и получай баллы</h2>
+    <div class="hero">
+        <img src="https://amastercar.ru/img/tuning_rus_car_6.jpg" alt="" onclick="OutPut()">
+        <p id="score">...</p>
+        <script>
+            var img = document.querySelector("img")
+            var score = document.querySelector("#score")
+            var i = localStorage.getItem("clickerPoints")
+
+            function OutPut() {
+                i++
+                console.log(score)
+                
+                localStorage.setItem("clickerPoints", i)
+
+                score.textContent = "Баллы: " + i
+            }
+            
+            document.querySelector("#score").textContent = localStorage.getItem("clickerPoints")
+
+        </script>
+    </div>
+</body>
+
+</html>

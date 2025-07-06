@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgba(189, 245, 255, 0.24);
+        }
+
+        #target {
+            background-color: rgb(255, 255, 255);
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            border-width: 20px;
+            border-style: solid;
+            border-color: #ff0000;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="StartGeme()">Начать Игру</button>
+    <div id="target" onclick="MoveTarget()"></div>
+
+
+    <script>
+        var gemeStarted = false
+        var points = 0
+        var startTime
+
+        function StartGeme() {
+            startTime = Date.now()
+            console.log(startTime)
+
+            var button = document.querySelector("button")
+
+            console.log("gS #1:", gemeStarted)
+            if (gemeStarted === false) {
+                target.style.display = "block"
+                MoveTarget()
+                gemeStarted = true
+                console.log("gS #2:", gemeStarted)
+            }
+            button.style.display = "none"
+        }
+
+
+        function MoveTarget() {
+            var elapsedTime = Date.now() - startTime
+            console.log(elapsedTime)
+
+            points += 1
+            console.log(points)
+
+
+            var target = document.querySelector("#target")
+            var targetSize = target.style.width + target.style.borderWidth
+            var randVal1 = Math.random() * (window.innerHeight - 40)
+            var randVal2 = Math.random() * (window.innerWidth - 40)
+
+            console.log(targetSize, window.getComputedStyle(target).width, window.getComputedStyle(target).borderWidth)
+
+            target.style.top = randVal1 + "px"
+            target.style.left = randVal2 + "px"
+            
+            if (elapsedTime/1000 >= 15){
+                target.style.display = "none"
+                document.querySelector("body").innerHTML = "<p style='width: 100%; text-align: center;'>"+points+"</p>"
+            }
+            
+        }
+    </script>
+</body></html>
